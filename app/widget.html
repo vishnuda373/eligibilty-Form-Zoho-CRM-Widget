@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel ="stylesheet" href="style.css">
+</head>
+
+<body class="container mt-3" id="container">
+  <button data-toggle="collapse" class="btn btn-success" id="edit_details">Edit Details</button>
+  <!-- <div id=form_div class="collapse mb-3"> -->
+    <form class="form"  action="/" enctype="multipart/form-data" id=form style="background-color:white;">
+      <br>
+      <label for="visa_refusal">Visa Refusal from any previous country?</label>
+      <select id="visa_refusal_options" class="form-control" onclick="visa_refusal()" style="pointer-events: none;">
+        <option value=" "></option>
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </Select>
+      <div id="visa">
+        <label for="refused_country">Visa Refused Country</label>
+        <select id = "ref_country" class ="form-control" style="pointer-events: none;">
+        </select>
+        <label for="reason">Reason for Refusal</label>
+        <textarea class="form-control" id="reason_for_ref" rows="5" cols="5"  style="background-color:white;" readonly></textarea>
+        <div id="file_rule">
+          <label for="file">Refusal Document</label>
+          <input type="file" class=" form-control" id="file" style="pointer-events: none;"></input>
+        </div>
+      </div>
+      <div id="file_name_rule">
+        <lable for="file_name">Refusal Document</lable>
+        <input type="text" class=" form-control" id="doc_name"  style="background-color:white;" readonly></input>
+      </div>
+      <label for="criminal_history">Any Criminal history?</label>
+      <select id="crim_history" class="form-control" onclick="crim_hist()" style="pointer-events: none;">
+        <option value=" "></option>
+        <option value="No">No</option>
+        <option Value="Yes">Yes</option>
+      </select>
+      <div id="criminal">
+        <label for="crim_details">Criminal History Details</label>
+        <textarea class="form-control" id="crim_his_details" rows="5" cols="5"  style="background-color:white;" readonly></textarea>
+      </div>
+      <label for="medical_issues">Any Medical Issues/ allergies?</label>
+      <select id="medi_issues" class="form-control" onclick="med_options()" style="pointer-events: none;">
+        <option value=" "></option>
+        <option value="No">No</option>
+        <option Value="Yes">Yes</option>
+      </select>
+      <div id="med">
+        <label for="climate_det">Does climate impact above health issues?</label>
+        <select id="climate_details" class="form-control" style="pointer-events: none;">
+          <option value=" "></option>
+          <option value="No">No</option>
+          <option Value="Yes">Yes</option>
+        </select>
+        <label for="med_issue_details">Details of Medical issues/ allergies</label>
+        <textarea class="form-control" id="med_details" rows="5" cols="5"  style="background-color:white;" readonly></textarea>
+      </div>
+      <label for="physical_disability">Do you have any physical disability ?</label>
+      <select id="phy_dis" class="form-control" onclick="physical()" style="pointer-events: none;">
+        <option value=" "></option>
+        <option value="No">No</option>
+        <option Value="Yes">Yes</option>
+      </select>
+      <div id="dis_div">
+        <label for="disability_details">Physical Disability Details</label>
+        <textarea class="form-control" id="dis_details" rows="5" cols="5"  style="background-color:white;" readonly></textarea>
+      </div>
+      <label for="relationship_status">Married?</label>
+      <select id="rel_status" class="form-control" onclick="relationship_status()" style="pointer-events: none;">
+        <option value=" "></option>
+        <option value="No">No</option>
+        <option Value="Yes">Yes</option>
+      </select>
+      <div id="relationship">
+        <label for="kids">Have Kids</label>
+        <select id="kids_option" class="form-control" onclick="kid_op()" style="pointer-events: none;">
+          <option value=" "></option>
+          <option value="No">No</option>
+          <option Value="Yes">Yes</option>
+        </select>
+        <div id="kids">
+          <label for="kids_details">Kids Details</label>
+          <textarea class="form-control" id="kids_det" rows="5" cols="5"  style="background-color:white;" readonly></textarea>
+        </div>
+      </div>
+      <label for="observation">Any Other Observation</label>
+      <textarea class="form-control" id="any_obser" rows="5" cols="5" style="background-color:white;" readonly></textarea><br>
+      <button type="submit" class="btn btn-success" id="submit" hidden>Save</button>
+      <button type="cancel" class="btn btn-danger" id="cancel" hidden>Cancel</button>
+    </form>
+  <div id="cover-spin"></div>
+  <script src="ZohoEmbededAppSDK.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
